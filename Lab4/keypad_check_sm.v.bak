@@ -1,0 +1,62 @@
+module keypad_check_sm(
+input clk,
+
+
+output [3:0] dout;
+);
+
+reg [4:0] state;	
+
+always @(negedge clk)
+begin
+
+
+
+
+
+end
+
+
+
+always @(state)
+begin
+
+	case(state)
+	5'b00001:			//state 1- waiting for input
+		begin
+	
+	
+		end
+		
+	5'b00010: 			//state 2- button debounce
+		begin
+		
+	
+		end
+	5'b00100:			//state 3- input detected, figure out what number 
+		begin
+		
+		end
+
+	5'b01000:			//state 4- number figured out, assign to dout and send out enable signal
+		begin
+		
+		end
+		
+	5'b10000: 			//state 5- waiting to release button, disable enable signal
+		begin
+		
+		end
+		
+	default:				//disable dout and disable enable, something went wrong
+		begin
+	
+		end
+
+	endcase
+
+
+end
+
+endmodule
+

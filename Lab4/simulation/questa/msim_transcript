@@ -1,0 +1,583 @@
+# Reading pref.tcl
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2021.2 win64 Apr 14 2021
+# //
+# //  Copyright 1991-2021 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do Lab4_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Questa Intel Starter FPGA Edition-64 vmap 2021.2 Lib Mapping Utility 2021.04 Apr 14 2021
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/22.1std/questa_fse/win64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/drago/OneDrive/Desktop/CST231\ HW/Lab4 {C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:37:43 on Feb 10,2024
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4" C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v 
+# -- Compiling module shift_in_sm
+# 
+# Top level modules:
+# 	shift_in_sm
+# End time: 20:37:43 on Feb 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+do buttons.tcl
+# .readout
+# .readout.a
+# .readout.b
+# .readout.c
+# .readout.d
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:37:50 on Feb 10,2024
+# vlog -reportprogress 300 ../../BCDDec.v ../../ClkDivider.v ../../Counter.v ../../SevenSegDecoder.v ../../shift_in_sm.v ../../valid_code_check_sm.v 
+# -- Compiling module BCDDec
+# -- Compiling module ClkDivider
+# -- Compiling module Counter
+# -- Compiling module SevenSegDecoder
+# -- Compiling module shift_in_sm
+# -- Compiling module valid_code_check_sm
+# 
+# Top level modules:
+# 	BCDDec
+# 	ClkDivider
+# 	Counter
+# 	SevenSegDecoder
+# 	shift_in_sm
+# 	valid_code_check_sm
+# End time: 20:37:50 on Feb 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:37:50 on Feb 10,2024
+# vlog -reportprogress 300 Counter_tb.v SevenSeg_tb.v shift_in_tb.v valid_code_check_tb.v 
+# -- Compiling module Counter_tb
+# -- Compiling module SevenSeg_tb
+# -- Compiling module shift_in_tb
+# -- Compiling module valid_code_check_tb
+# 
+# Top level modules:
+# 	Counter_tb
+# 	SevenSeg_tb
+# 	shift_in_tb
+# 	valid_code_check_tb
+# End time: 20:37:50 on Feb 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.shift_in_tb -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" 
+# Start time: 20:37:50 on Feb 10,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 1 FSM in module "shift_in_sm(fast)".
+# Loading work.shift_in_tb(fast)
+# Loading work.shift_in_sm(fast)
+# ** UI-Msg: (vish-4014) No objects found matching 'Signals'.
+# Executing ONERROR command at macro ./shift_in_wave.do line 9
+# End time: 20:40:15 on Feb 10,2024, Elapsed time: 0:02:25
+# Errors: 0, Warnings: 0
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:40:15 on Feb 10,2024
+# vlog -reportprogress 300 ../../BCDDec.v ../../ClkDivider.v ../../Counter.v ../../SevenSegDecoder.v ../../shift_in_sm.v ../../valid_code_check_sm.v 
+# -- Compiling module BCDDec
+# -- Compiling module ClkDivider
+# -- Compiling module Counter
+# -- Compiling module SevenSegDecoder
+# -- Compiling module shift_in_sm
+# -- Compiling module valid_code_check_sm
+# 
+# Top level modules:
+# 	BCDDec
+# 	ClkDivider
+# 	Counter
+# 	SevenSegDecoder
+# 	shift_in_sm
+# 	valid_code_check_sm
+# End time: 20:40:15 on Feb 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:40:15 on Feb 10,2024
+# vlog -reportprogress 300 Counter_tb.v SevenSeg_tb.v shift_in_tb.v valid_code_check_tb.v 
+# -- Compiling module Counter_tb
+# -- Compiling module SevenSeg_tb
+# -- Compiling module shift_in_tb
+# -- Compiling module valid_code_check_tb
+# 
+# Top level modules:
+# 	Counter_tb
+# 	SevenSeg_tb
+# 	shift_in_tb
+# 	valid_code_check_tb
+# End time: 20:40:15 on Feb 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.shift_in_tb -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" 
+# Start time: 20:40:15 on Feb 10,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.shift_in_tb(fast)
+# Loading work.shift_in_sm(fast)
+# ** UI-Msg: (vish-4014) No objects found matching 'Signals'.
+# Executing ONERROR command at macro ./shift_in_wave.do line 9
+# End time: 20:41:20 on Feb 10,2024, Elapsed time: 0:01:05
+# Errors: 0, Warnings: 0
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:41:20 on Feb 10,2024
+# vlog -reportprogress 300 ../../BCDDec.v ../../ClkDivider.v ../../Counter.v ../../SevenSegDecoder.v ../../shift_in_sm.v ../../valid_code_check_sm.v 
+# -- Compiling module BCDDec
+# -- Compiling module ClkDivider
+# -- Compiling module Counter
+# -- Compiling module SevenSegDecoder
+# -- Compiling module shift_in_sm
+# -- Compiling module valid_code_check_sm
+# 
+# Top level modules:
+# 	BCDDec
+# 	ClkDivider
+# 	Counter
+# 	SevenSegDecoder
+# 	shift_in_sm
+# 	valid_code_check_sm
+# End time: 20:41:21 on Feb 10,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:41:21 on Feb 10,2024
+# vlog -reportprogress 300 Counter_tb.v SevenSeg_tb.v shift_in_tb.v valid_code_check_tb.v 
+# -- Compiling module Counter_tb
+# -- Compiling module SevenSeg_tb
+# -- Compiling module shift_in_tb
+# -- Compiling module valid_code_check_tb
+# 
+# Top level modules:
+# 	Counter_tb
+# 	SevenSeg_tb
+# 	shift_in_tb
+# 	valid_code_check_tb
+# End time: 20:41:21 on Feb 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.shift_in_tb -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" 
+# Start time: 20:41:21 on Feb 10,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Loading work.shift_in_tb(fast)
+# Loading work.shift_in_sm(fast)
+# ** UI-Msg: (vish-4014) No objects found matching 'Signals'.
+# Executing ONERROR command at macro ./shift_in_wave.do line 9
+# End time: 20:42:06 on Feb 10,2024, Elapsed time: 0:00:45
+# Errors: 0, Warnings: 0
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:42:06 on Feb 10,2024
+# vlog -reportprogress 300 ../../BCDDec.v ../../ClkDivider.v ../../Counter.v ../../SevenSegDecoder.v ../../shift_in_sm.v ../../valid_code_check_sm.v 
+# -- Compiling module BCDDec
+# -- Compiling module ClkDivider
+# -- Compiling module Counter
+# -- Compiling module SevenSegDecoder
+# -- Compiling module shift_in_sm
+# -- Compiling module valid_code_check_sm
+# 
+# Top level modules:
+# 	BCDDec
+# 	ClkDivider
+# 	Counter
+# 	SevenSegDecoder
+# 	shift_in_sm
+# 	valid_code_check_sm
+# End time: 20:42:07 on Feb 10,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:42:07 on Feb 10,2024
+# vlog -reportprogress 300 Counter_tb.v SevenSeg_tb.v shift_in_tb.v valid_code_check_tb.v 
+# -- Compiling module Counter_tb
+# -- Compiling module SevenSeg_tb
+# -- Compiling module shift_in_tb
+# -- Compiling module valid_code_check_tb
+# 
+# Top level modules:
+# 	Counter_tb
+# 	SevenSeg_tb
+# 	shift_in_tb
+# 	valid_code_check_tb
+# End time: 20:42:07 on Feb 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.shift_in_tb -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" 
+# Start time: 20:42:07 on Feb 10,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.shift_in_tb(fast)
+# Loading work.shift_in_sm(fast)
+# ** UI-Msg: (vish-4014) No objects found matching 'Signals'.
+# Executing ONERROR command at macro ./shift_in_wave.do line 9
+# image file format "bmp" is unknown
+# End time: 20:43:37 on Feb 10,2024, Elapsed time: 0:01:30
+# Errors: 0, Warnings: 0
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:43:37 on Feb 10,2024
+# vlog -reportprogress 300 ../../BCDDec.v ../../ClkDivider.v ../../Counter.v ../../SevenSegDecoder.v ../../shift_in_sm.v ../../valid_code_check_sm.v 
+# -- Compiling module BCDDec
+# -- Compiling module ClkDivider
+# -- Compiling module Counter
+# -- Compiling module SevenSegDecoder
+# -- Compiling module shift_in_sm
+# -- Compiling module valid_code_check_sm
+# 
+# Top level modules:
+# 	BCDDec
+# 	ClkDivider
+# 	Counter
+# 	SevenSegDecoder
+# 	shift_in_sm
+# 	valid_code_check_sm
+# End time: 20:43:37 on Feb 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:43:37 on Feb 10,2024
+# vlog -reportprogress 300 Counter_tb.v SevenSeg_tb.v shift_in_tb.v valid_code_check_tb.v 
+# -- Compiling module Counter_tb
+# -- Compiling module SevenSeg_tb
+# -- Compiling module shift_in_tb
+# -- Compiling module valid_code_check_tb
+# 
+# Top level modules:
+# 	Counter_tb
+# 	SevenSeg_tb
+# 	shift_in_tb
+# 	valid_code_check_tb
+# End time: 20:43:37 on Feb 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.Counter_tb -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" 
+# Start time: 20:43:37 on Feb 10,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.Counter_tb(fast)
+# Loading work.Counter(fast)
+# End time: 20:44:08 on Feb 10,2024, Elapsed time: 0:00:31
+# Errors: 0, Warnings: 0
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:44:08 on Feb 10,2024
+# vlog -reportprogress 300 ../../BCDDec.v ../../ClkDivider.v ../../Counter.v ../../SevenSegDecoder.v ../../shift_in_sm.v ../../valid_code_check_sm.v 
+# -- Compiling module BCDDec
+# -- Compiling module ClkDivider
+# -- Compiling module Counter
+# -- Compiling module SevenSegDecoder
+# -- Compiling module shift_in_sm
+# -- Compiling module valid_code_check_sm
+# 
+# Top level modules:
+# 	BCDDec
+# 	ClkDivider
+# 	Counter
+# 	SevenSegDecoder
+# 	shift_in_sm
+# 	valid_code_check_sm
+# End time: 20:44:08 on Feb 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:44:08 on Feb 10,2024
+# vlog -reportprogress 300 Counter_tb.v SevenSeg_tb.v shift_in_tb.v valid_code_check_tb.v 
+# -- Compiling module Counter_tb
+# -- Compiling module SevenSeg_tb
+# -- Compiling module shift_in_tb
+# -- Compiling module valid_code_check_tb
+# 
+# Top level modules:
+# 	Counter_tb
+# 	SevenSeg_tb
+# 	shift_in_tb
+# 	valid_code_check_tb
+# End time: 20:44:08 on Feb 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.valid_code_check_tb -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" 
+# Start time: 20:44:08 on Feb 10,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Note: (vopt-143) Recognized 1 FSM in module "valid_code_check_sm(fast)".
+# Loading work.valid_code_check_tb(fast)
+# Loading work.valid_code_check_sm(fast)
+# ** UI-Msg: (vish-4014) No objects found matching 'Signals'.
+# Executing ONERROR command at macro ./valid_code_wave.do line 12
+# End time: 20:47:02 on Feb 10,2024, Elapsed time: 0:02:54
+# Errors: 0, Warnings: 0
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:47:02 on Feb 10,2024
+# vlog -reportprogress 300 ../../BCDDec.v ../../ClkDivider.v ../../Counter.v ../../SevenSegDecoder.v ../../shift_in_sm.v ../../valid_code_check_sm.v 
+# -- Compiling module BCDDec
+# -- Compiling module ClkDivider
+# -- Compiling module Counter
+# -- Compiling module SevenSegDecoder
+# -- Compiling module shift_in_sm
+# -- Compiling module valid_code_check_sm
+# 
+# Top level modules:
+# 	BCDDec
+# 	ClkDivider
+# 	Counter
+# 	SevenSegDecoder
+# 	shift_in_sm
+# 	valid_code_check_sm
+# End time: 20:47:02 on Feb 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:47:02 on Feb 10,2024
+# vlog -reportprogress 300 Counter_tb.v SevenSeg_tb.v shift_in_tb.v valid_code_check_tb.v 
+# -- Compiling module Counter_tb
+# -- Compiling module SevenSeg_tb
+# -- Compiling module shift_in_tb
+# -- Compiling module valid_code_check_tb
+# 
+# Top level modules:
+# 	Counter_tb
+# 	SevenSeg_tb
+# 	shift_in_tb
+# 	valid_code_check_tb
+# End time: 20:47:02 on Feb 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.valid_code_check_tb -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" 
+# Start time: 20:47:02 on Feb 10,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.valid_code_check_tb(fast)
+# Loading work.valid_code_check_sm(fast)
+# ** UI-Msg: (vish-4014) No objects found matching 'Signals'.
+# Executing ONERROR command at macro ./valid_code_wave.do line 12
+# End time: 20:47:56 on Feb 10,2024, Elapsed time: 0:00:54
+# Errors: 0, Warnings: 0
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:47:56 on Feb 10,2024
+# vlog -reportprogress 300 ../../BCDDec.v ../../ClkDivider.v ../../Counter.v ../../SevenSegDecoder.v ../../shift_in_sm.v ../../valid_code_check_sm.v 
+# -- Compiling module BCDDec
+# -- Compiling module ClkDivider
+# -- Compiling module Counter
+# -- Compiling module SevenSegDecoder
+# -- Compiling module shift_in_sm
+# -- Compiling module valid_code_check_sm
+# 
+# Top level modules:
+# 	BCDDec
+# 	ClkDivider
+# 	Counter
+# 	SevenSegDecoder
+# 	shift_in_sm
+# 	valid_code_check_sm
+# End time: 20:47:56 on Feb 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:47:56 on Feb 10,2024
+# vlog -reportprogress 300 Counter_tb.v SevenSeg_tb.v shift_in_tb.v valid_code_check_tb.v 
+# -- Compiling module Counter_tb
+# -- Compiling module SevenSeg_tb
+# -- Compiling module shift_in_tb
+# -- Compiling module valid_code_check_tb
+# 
+# Top level modules:
+# 	Counter_tb
+# 	SevenSeg_tb
+# 	shift_in_tb
+# 	valid_code_check_tb
+# End time: 20:47:57 on Feb 10,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim work.valid_code_check_tb -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" 
+# Start time: 20:47:57 on Feb 10,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.valid_code_check_tb(fast)
+# Loading work.valid_code_check_sm(fast)
+# ** UI-Msg: (vish-4014) No objects found matching 'Signals'.
+# Executing ONERROR command at macro ./valid_code_wave.do line 12
+# End time: 20:48:39 on Feb 10,2024, Elapsed time: 0:00:42
+# Errors: 0, Warnings: 0
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:48:39 on Feb 10,2024
+# vlog -reportprogress 300 ../../BCDDec.v ../../ClkDivider.v ../../Counter.v ../../SevenSegDecoder.v ../../shift_in_sm.v ../../valid_code_check_sm.v 
+# -- Compiling module BCDDec
+# -- Compiling module ClkDivider
+# -- Compiling module Counter
+# -- Compiling module SevenSegDecoder
+# -- Compiling module shift_in_sm
+# -- Compiling module valid_code_check_sm
+# 
+# Top level modules:
+# 	BCDDec
+# 	ClkDivider
+# 	Counter
+# 	SevenSegDecoder
+# 	shift_in_sm
+# 	valid_code_check_sm
+# End time: 20:48:39 on Feb 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:48:39 on Feb 10,2024
+# vlog -reportprogress 300 Counter_tb.v SevenSeg_tb.v shift_in_tb.v valid_code_check_tb.v 
+# -- Compiling module Counter_tb
+# -- Compiling module SevenSeg_tb
+# -- Compiling module shift_in_tb
+# -- Compiling module valid_code_check_tb
+# 
+# Top level modules:
+# 	Counter_tb
+# 	SevenSeg_tb
+# 	shift_in_tb
+# 	valid_code_check_tb
+# End time: 20:48:39 on Feb 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.valid_code_check_tb -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" 
+# Start time: 20:48:39 on Feb 10,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.valid_code_check_tb(fast)
+# Loading work.valid_code_check_sm(fast)
+# ** UI-Msg: (vish-4014) No objects found matching 'Signals'.
+# Executing ONERROR command at macro ./valid_code_wave.do line 12
+# End time: 20:49:36 on Feb 10,2024, Elapsed time: 0:00:57
+# Errors: 0, Warnings: 0
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:49:36 on Feb 10,2024
+# vlog -reportprogress 300 ../../BCDDec.v ../../ClkDivider.v ../../Counter.v ../../SevenSegDecoder.v ../../shift_in_sm.v ../../valid_code_check_sm.v 
+# -- Compiling module BCDDec
+# -- Compiling module ClkDivider
+# -- Compiling module Counter
+# -- Compiling module SevenSegDecoder
+# -- Compiling module shift_in_sm
+# -- Compiling module valid_code_check_sm
+# 
+# Top level modules:
+# 	BCDDec
+# 	ClkDivider
+# 	Counter
+# 	SevenSegDecoder
+# 	shift_in_sm
+# 	valid_code_check_sm
+# End time: 20:49:36 on Feb 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:49:36 on Feb 10,2024
+# vlog -reportprogress 300 Counter_tb.v SevenSeg_tb.v shift_in_tb.v valid_code_check_tb.v 
+# -- Compiling module Counter_tb
+# -- Compiling module SevenSeg_tb
+# -- Compiling module shift_in_tb
+# -- Compiling module valid_code_check_tb
+# 
+# Top level modules:
+# 	Counter_tb
+# 	SevenSeg_tb
+# 	shift_in_tb
+# 	valid_code_check_tb
+# End time: 20:49:36 on Feb 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.valid_code_check_tb -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" 
+# Start time: 20:49:37 on Feb 10,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading work.valid_code_check_tb(fast)
+# Loading work.valid_code_check_sm(fast)
+# ** UI-Msg: (vish-4014) No objects found matching 'Signals'.
+# Executing ONERROR command at macro ./valid_code_wave.do line 12
+# End time: 20:51:27 on Feb 10,2024, Elapsed time: 0:01:50
+# Errors: 0, Warnings: 0
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:51:27 on Feb 10,2024
+# vlog -reportprogress 300 ../../BCDDec.v ../../ClkDivider.v ../../Counter.v ../../SevenSegDecoder.v ../../shift_in_sm.v ../../valid_code_check_sm.v 
+# -- Compiling module BCDDec
+# -- Compiling module ClkDivider
+# -- Compiling module Counter
+# -- Compiling module SevenSegDecoder
+# -- Compiling module shift_in_sm
+# -- Compiling module valid_code_check_sm
+# 
+# Top level modules:
+# 	BCDDec
+# 	ClkDivider
+# 	Counter
+# 	SevenSegDecoder
+# 	shift_in_sm
+# 	valid_code_check_sm
+# End time: 20:51:28 on Feb 10,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:51:28 on Feb 10,2024
+# vlog -reportprogress 300 Counter_tb.v SevenSeg_tb.v shift_in_tb.v valid_code_check_tb.v 
+# -- Compiling module Counter_tb
+# -- Compiling module SevenSeg_tb
+# -- Compiling module shift_in_tb
+# -- Compiling module valid_code_check_tb
+# 
+# Top level modules:
+# 	Counter_tb
+# 	SevenSeg_tb
+# 	shift_in_tb
+# 	valid_code_check_tb
+# End time: 20:51:28 on Feb 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.SevenSeg_tb -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" 
+# Start time: 20:51:28 on Feb 10,2024
+# ** Note: (vsim-3812) Design is being optimized...
+# Loading work.SevenSeg_tb(fast)
+# Loading work.SevenSegDecoder(fast)
+# End time: 20:51:35 on Feb 10,2024, Elapsed time: 0:00:07
+# Errors: 0, Warnings: 0
+# ** Warning: (vlib-34) Library already exists at "work".
+# Errors: 0, Warnings: 1
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:51:35 on Feb 10,2024
+# vlog -reportprogress 300 ../../BCDDec.v ../../ClkDivider.v ../../Counter.v ../../SevenSegDecoder.v ../../shift_in_sm.v ../../valid_code_check_sm.v 
+# -- Compiling module BCDDec
+# -- Compiling module ClkDivider
+# -- Compiling module Counter
+# -- Compiling module SevenSegDecoder
+# -- Compiling module shift_in_sm
+# -- Compiling module valid_code_check_sm
+# 
+# Top level modules:
+# 	BCDDec
+# 	ClkDivider
+# 	Counter
+# 	SevenSegDecoder
+# 	shift_in_sm
+# 	valid_code_check_sm
+# End time: 20:51:35 on Feb 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Questa Intel Starter FPGA Edition-64 vlog 2021.2 Compiler 2021.04 Apr 14 2021
+# Start time: 20:51:35 on Feb 10,2024
+# vlog -reportprogress 300 Counter_tb.v SevenSeg_tb.v shift_in_tb.v valid_code_check_tb.v 
+# -- Compiling module Counter_tb
+# -- Compiling module SevenSeg_tb
+# -- Compiling module shift_in_tb
+# -- Compiling module valid_code_check_tb
+# 
+# Top level modules:
+# 	Counter_tb
+# 	SevenSeg_tb
+# 	shift_in_tb
+# 	valid_code_check_tb
+# End time: 20:51:35 on Feb 10,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim work.valid_code_check_tb -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" 
+# Start time: 20:51:35 on Feb 10,2024
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading work.valid_code_check_tb(fast)
+# Loading work.valid_code_check_sm(fast)
+# ** UI-Msg: (vish-4014) No objects found matching 'Signals'.
+# Executing ONERROR command at macro ./valid_code_wave.do line 12
+# Causality operation skipped due to absence of debug database file
+# End time: 20:52:13 on Feb 10,2024, Elapsed time: 0:00:38
+# Errors: 0, Warnings: 0

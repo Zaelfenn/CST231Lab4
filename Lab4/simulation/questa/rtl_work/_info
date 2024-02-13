@@ -1,0 +1,280 @@
+m255
+K4
+z2
+Z0 !s99 nomlopt
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+!s11f vlog 2021.2 2021.04, Apr 14 2021
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 dC:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/simulation/questa
+T_opt
+!s110 1707627088
+VPeiN9ONPFH5D[7Cf2CmVo3
+04 11 4 work SevenSeg_tb fast 0
+=1-b44506db6ba0-65c85250-1de-6224
+Z2 !s124 OEM10U2 
+Z3 o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
+Z4 tCvgOpt 0
+n@_opt
+Z5 OL;O;2021.2;73
+R1
+T_opt1
+!s110 1707626618
+V?NcezLD>9R@kdzjdPJLUT3
+04 10 4 work Counter_tb fast 0
+=1-b44506db6ba0-65c85079-36a-295c
+R2
+R3
+R4
+n@_opt1
+R5
+R1
+T_opt2
+!s110 1707626977
+VhbGBSLb10CIXX=H6f<c^f0
+04 19 4 work valid_code_check_tb fast 0
+=1-b44506db6ba0-65c851e1-ce-4370
+R2
+R3
+R4
+n@_opt2
+R5
+R1
+vBCDDec
+Z6 !s110 1707627095
+!i10b 1
+!s100 I9fE6Z4<2G7Xznllc85UO2
+IXcabcSXn7KX>YL:oN8a6O3
+R1
+w1707604908
+8../../BCDDec.v
+F../../BCDDec.v
+!i122 23
+L0 1 19
+Z7 VDg1SIo80bB@j0V0VzS_@n1
+Z8 OL;L;2021.2;73
+r1
+!s85 0
+31
+Z9 !s108 1707627095.000000
+Z10 !s107 ../../valid_code_check_sm.v|../../shift_in_sm.v|../../SevenSegDecoder.v|../../Counter.v|../../ClkDivider.v|../../BCDDec.v|
+Z11 !s90 -reportprogress|300|../../BCDDec.v|../../ClkDivider.v|../../Counter.v|../../SevenSegDecoder.v|../../shift_in_sm.v|../../valid_code_check_sm.v|
+!i113 0
+Z12 o-L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R4
+n@b@c@d@dec
+vClkDivider
+R6
+!i10b 1
+!s100 C=RN=j5<M7N4Q:gSGF89S1
+IY2OBeK?g5Fci=O5^InRmU3
+R1
+w1707604914
+8../../ClkDivider.v
+F../../ClkDivider.v
+!i122 23
+L0 1 54
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R4
+n@clk@divider
+vCounter
+R6
+!i10b 1
+!s100 ][BZ?Gl[N?3N?3OACCY6^2
+IezzEmlzdlC[C^M_Hcz_MC2
+R1
+w1707604905
+8../../Counter.v
+F../../Counter.v
+!i122 23
+Z13 L0 1 22
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R4
+n@counter
+vCounter_tb
+R6
+!i10b 1
+!s100 [7h;anXLlCF0IKS[ILEje1
+I0eHnY8EE8[f:jdF[G:J580
+R1
+w1707604963
+8Counter_tb.v
+FCounter_tb.v
+!i122 24
+L0 3 26
+R7
+R8
+r1
+!s85 0
+31
+R9
+!s107 valid_code_check_tb.v|shift_in_tb.v|SevenSeg_tb.v|Counter_tb.v|
+Z14 !s90 -reportprogress|300|Counter_tb.v|SevenSeg_tb.v|shift_in_tb.v|valid_code_check_tb.v|
+!i113 0
+R12
+R4
+n@counter_tb
+vSevenSeg_tb
+R6
+!i10b 1
+!s100 AFJUVb3CWY1?XBS2IGA]B0
+IOEhXI?6gGFcSbZh:L1WL41
+R1
+w1707604989
+8SevenSeg_tb.v
+FSevenSeg_tb.v
+!i122 24
+L0 3 23
+R7
+R8
+r1
+!s85 0
+31
+R9
+Z15 !s107 valid_code_check_tb.v|shift_in_tb.v|SevenSeg_tb.v|Counter_tb.v|
+R14
+!i113 0
+R12
+R4
+n@seven@seg_tb
+vSevenSegDecoder
+R6
+!i10b 1
+!s100 Y=BRfgh35B7PgTUAVjB<m2
+I1W2bk_z_RIM5FMb5P]WLJ3
+R1
+w1707604892
+8../../SevenSegDecoder.v
+F../../SevenSegDecoder.v
+!i122 23
+R13
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R4
+n@seven@seg@decoder
+vshift_in_sm
+R6
+!i10b 1
+!s100 GhGYOz7deM@IaQU59]KB21
+IW;JQX0C:F1NTh2FF=7ACA1
+R1
+w1707626111
+8../../shift_in_sm.v
+F../../shift_in_sm.v
+!i122 23
+L0 1 159
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R4
+vshift_in_tb
+R6
+!i10b 1
+!s100 HJnc?N2cd<<k92R19:o_h0
+Iob`c4lMzm2:=?GeL`;^km0
+R1
+w1707626523
+8shift_in_tb.v
+Fshift_in_tb.v
+!i122 24
+L0 3 32
+R7
+R8
+r1
+!s85 0
+31
+R9
+R15
+R14
+!i113 0
+R12
+R4
+vvalid_code_check_sm
+R6
+!i10b 1
+!s100 AgE9M8?UMgd<Yn`8ALK=E2
+IDCa]0_OgM;VEXd_65@KWY0
+R1
+w1707623963
+8../../valid_code_check_sm.v
+F../../valid_code_check_sm.v
+!i122 23
+L0 1 102
+R7
+R8
+r1
+!s85 0
+31
+R9
+R10
+R11
+!i113 0
+R12
+R4
+vvalid_code_check_tb
+R6
+!i10b 1
+!s100 L=P2CW?_1mC@14R4cjgMQ2
+IoX6Yo:zkOe>a?NSgbTzQ33
+R1
+w1707626971
+8valid_code_check_tb.v
+Fvalid_code_check_tb.v
+!i122 24
+L0 3 44
+R7
+R8
+r1
+!s85 0
+31
+R9
+R15
+R14
+!i113 0
+R12
+R4

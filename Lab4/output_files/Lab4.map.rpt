@@ -1,0 +1,600 @@
+Analysis & Synthesis report for Lab4
+Mon Feb 12 20:55:55 2024
+Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |TopLevel|valid_code_check_sm:sm3|state
+  9. State Machine - |TopLevel|shift_in_sm:sm2|state
+ 10. State Machine - |TopLevel|keypad_check_sm:sm1|state
+ 11. User-Specified and Inferred Latches
+ 12. Registers Removed During Synthesis
+ 13. Removed Registers Triggering Further Register Optimizations
+ 14. General Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Parameter Settings for User Entity Instance: ClkDivider:u1
+ 17. Parameter Settings for User Entity Instance: ClkDivider:u2
+ 18. Parameter Settings for User Entity Instance: Counter:c1
+ 19. Parameter Settings for User Entity Instance: Counter:c2
+ 20. Port Connectivity Checks: "shift_in_sm:sm2"
+ 21. Post-Synthesis Netlist Statistics for Top Partition
+ 22. Elapsed Time Per Partition
+ 23. Analysis & Synthesis Messages
+ 24. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2023  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Mon Feb 12 20:55:55 2024          ;
+; Quartus Prime Version           ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
+; Revision Name                   ; Lab4                                           ;
+; Top-level Entity Name           ; TopLevel                                       ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 61                                             ;
+; Total pins                      ; 41                                             ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; TopLevel           ; Lab4               ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 20          ;
+; Maximum allowed            ; 14          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 14          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-14        ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                       ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                         ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------+---------+
+; ClkDivider.v                     ; yes             ; User Verilog HDL File  ; C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/ClkDivider.v          ;         ;
+; Counter.v                        ; yes             ; User Verilog HDL File  ; C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/Counter.v             ;         ;
+; shift_in_sm.v                    ; yes             ; User Verilog HDL File  ; C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v         ;         ;
+; valid_code_check_sm.v            ; yes             ; User Verilog HDL File  ; C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/valid_code_check_sm.v ;         ;
+; keypad_check_sm.v                ; yes             ; User Verilog HDL File  ; C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v     ;         ;
+; TopLevel.v                       ; yes             ; User Verilog HDL File  ; C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v            ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 52        ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 92        ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 11        ;
+;     -- 5 input functions                    ; 8         ;
+;     -- 4 input functions                    ; 12        ;
+;     -- <=3 input functions                  ; 61        ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 61        ;
+;                                             ;           ;
+; I/O pins                                    ; 41        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; rst~input ;
+; Maximum fan-out                             ; 53        ;
+; Total fan-out                               ; 584       ;
+; Average fan-out                             ; 2.49      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                            ;
++------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name               ; Entity Name         ; Library Name ;
++------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+---------------------+--------------+
+; |TopLevel                    ; 92 (0)              ; 61 (0)                    ; 0                 ; 0          ; 41   ; 0            ; |TopLevel                         ; TopLevel            ; work         ;
+;    |ClkDivider:u1|           ; 21 (21)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|ClkDivider:u1           ; ClkDivider          ; work         ;
+;    |ClkDivider:u2|           ; 32 (32)             ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|ClkDivider:u2           ; ClkDivider          ; work         ;
+;    |Counter:c1|              ; 4 (4)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|Counter:c1              ; Counter             ; work         ;
+;    |keypad_check_sm:sm1|     ; 32 (32)             ; 9 (9)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|keypad_check_sm:sm1     ; keypad_check_sm     ; work         ;
+;    |shift_in_sm:sm2|         ; 1 (1)               ; 1 (1)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|shift_in_sm:sm2         ; shift_in_sm         ; work         ;
+;    |valid_code_check_sm:sm3| ; 2 (2)               ; 3 (3)                     ; 0                 ; 0          ; 0    ; 0            ; |TopLevel|valid_code_check_sm:sm3 ; valid_code_check_sm ; work         ;
++------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------+
+; State Machine - |TopLevel|valid_code_check_sm:sm3|state        ;
++------------+------------+------------+------------+------------+
+; Name       ; state.1000 ; state.0100 ; state.0010 ; state.0001 ;
++------------+------------+------------+------------+------------+
+; state.0001 ; 0          ; 0          ; 0          ; 0          ;
+; state.0010 ; 0          ; 0          ; 1          ; 1          ;
+; state.0100 ; 0          ; 1          ; 0          ; 1          ;
+; state.1000 ; 1          ; 0          ; 0          ; 1          ;
++------------+------------+------------+------------+------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |TopLevel|shift_in_sm:sm2|state                                                                               ;
++---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+
+; Name          ; state.1000000 ; state.0100000 ; state.0010000 ; state.0001000 ; state.0000100 ; state.0000010 ; state.0000001 ;
++---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+
+; state.1000000 ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ; 0             ;
+; state.0000010 ; 1             ; 0             ; 0             ; 0             ; 0             ; 1             ; 0             ;
+; state.0000100 ; 1             ; 0             ; 0             ; 0             ; 1             ; 0             ; 0             ;
+; state.0001000 ; 1             ; 0             ; 0             ; 1             ; 0             ; 0             ; 0             ;
+; state.0010000 ; 1             ; 0             ; 1             ; 0             ; 0             ; 0             ; 0             ;
+; state.0100000 ; 1             ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ;
+; state.0000001 ; 1             ; 0             ; 0             ; 0             ; 0             ; 0             ; 1             ;
++---------------+---------------+---------------+---------------+---------------+---------------+---------------+---------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |TopLevel|keypad_check_sm:sm1|state                                                                                                                                                                                           ;
++-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+
+; Name              ; state.10000000000 ; state.01000000000 ; state.00100000000 ; state.00010000000 ; state.00001000000 ; state.00000100000 ; state.00000010000 ; state.00000001000 ; state.00000000100 ; state.00000000010 ; state.00000000001 ;
++-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+
+; state.00000000001 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ;
+; state.00000000010 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 1                 ;
+; state.00000000100 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 1                 ;
+; state.00000001000 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 1                 ;
+; state.00000010000 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 1                 ;
+; state.00000100000 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
+; state.00001000000 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
+; state.00010000000 ; 0                 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
+; state.00100000000 ; 0                 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
+; state.01000000000 ; 0                 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
+; state.10000000000 ; 1                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 0                 ; 1                 ;
++-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+-------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                 ;
++----------------------------------------------------+---------------------------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal                   ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------------------------+------------------------+
+; keypad_check_sm:sm1|row_check[0]                   ; keypad_check_sm:sm1|WideOr9           ; yes                    ;
+; keypad_check_sm:sm1|row_check[1]                   ; keypad_check_sm:sm1|WideOr9           ; yes                    ;
+; keypad_check_sm:sm1|row_check[2]                   ; keypad_check_sm:sm1|WideOr9           ; yes                    ;
+; keypad_check_sm:sm1|row_check[3]                   ; keypad_check_sm:sm1|WideOr9           ; yes                    ;
+; keypad_check_sm:sm1|dout[3]                        ; keypad_check_sm:sm1|state.00100000000 ; yes                    ;
+; keypad_check_sm:sm1|dout[2]                        ; keypad_check_sm:sm1|state.00100000000 ; yes                    ;
+; keypad_check_sm:sm1|dout[1]                        ; keypad_check_sm:sm1|state.00100000000 ; yes                    ;
+; keypad_check_sm:sm1|dout[0]                        ; keypad_check_sm:sm1|state.00100000000 ; yes                    ;
+; Number of user-specified and inferred latches = 8  ;                                       ;                        ;
++----------------------------------------------------+---------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; Counter:c2|count[0..2]                 ; Stuck at GND due to stuck port data_in ;
+; keypad_check_sm:sm1|state.10000000000  ; Stuck at GND due to stuck port data_in ;
+; keypad_check_sm:sm1|state.01000000000  ; Stuck at GND due to stuck port data_in ;
+; shift_in_sm:sm2|state.0100000          ; Stuck at GND due to stuck port data_in ;
+; shift_in_sm:sm2|state.0010000          ; Stuck at GND due to stuck port data_in ;
+; shift_in_sm:sm2|state.0001000          ; Stuck at GND due to stuck port data_in ;
+; shift_in_sm:sm2|state.0000100          ; Stuck at GND due to stuck port data_in ;
+; shift_in_sm:sm2|state.0000010          ; Stuck at GND due to stuck port data_in ;
+; shift_in_sm:sm2|state.0000001          ; Stuck at GND due to stuck port data_in ;
+; valid_code_check_sm:sm3|state.1000     ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 12 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                ;
++---------------------------------------+---------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal        ; Registers Removed due to This Register ;
++---------------------------------------+---------------------------+----------------------------------------+
+; keypad_check_sm:sm1|state.01000000000 ; Stuck at GND              ; valid_code_check_sm:sm3|state.1000     ;
+;                                       ; due to stuck port data_in ;                                        ;
++---------------------------------------+---------------------------+----------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 61    ;
+; Number of registers using Synchronous Clear  ; 43    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 44    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 44    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |TopLevel|Counter:c1|count[2] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ClkDivider:u1 ;
++----------------+--------+----------------------------------+
+; Parameter Name ; Value  ; Type                             ;
++----------------+--------+----------------------------------+
+; DIVIDER        ; 100000 ; Signed Integer                   ;
+; BITS           ; 17     ; Signed Integer                   ;
++----------------+--------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ClkDivider:u2 ;
++----------------+----------+--------------------------------+
+; Parameter Name ; Value    ; Type                           ;
++----------------+----------+--------------------------------+
+; DIVIDER        ; 12500000 ; Signed Integer                 ;
+; BITS           ; 25       ; Signed Integer                 ;
++----------------+----------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Counter:c1 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; BITS           ; 4     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Counter:c2 ;
++----------------+-------+--------------------------------+
+; Parameter Name ; Value ; Type                           ;
++----------------+-------+--------------------------------+
+; BITS           ; 3     ; Signed Integer                 ;
++----------------+-------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "shift_in_sm:sm2"                                                                                                                                  ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port    ; Type  ; Severity ; Details                                                                                                                                         ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+; counter ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (5 bits) it drives.  Extra input bit(s) "counter[4..4]" will be connected to GND. ;
++---------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 61                          ;
+;     CLR               ; 2                           ;
+;     ENA               ; 2                           ;
+;     ENA CLR SCLR      ; 42                          ;
+;     SCLR              ; 1                           ;
+;     plain             ; 14                          ;
+; arriav_lcell_comb     ; 93                          ;
+;     arith             ; 42                          ;
+;         1 data inputs ; 42                          ;
+;     normal            ; 51                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 13                          ;
+;         4 data inputs ; 12                          ;
+;         5 data inputs ; 8                           ;
+;         6 data inputs ; 11                          ;
+; boundary_port         ; 41                          ;
+;                       ;                             ;
+; Max LUT depth         ; 3.40                        ;
+; Average LUT depth     ; 2.25                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+    Info: Processing started: Mon Feb 12 20:55:50 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Lab4 -c Lab4
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file clkdivider.v
+    Info (12023): Found entity 1: ClkDivider File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/ClkDivider.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file counter.v
+    Info (12023): Found entity 1: Counter File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/Counter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file sevensegdecoder.v
+    Info (12023): Found entity 1: SevenSegDecoder File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/SevenSegDecoder.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file shift_in_sm.v
+    Info (12023): Found entity 1: shift_in_sm File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file valid_code_check_sm.v
+    Info (12023): Found entity 1: valid_code_check_sm File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/valid_code_check_sm.v Line: 1
+Warning (10229): Verilog HDL Expression warning at keypad_check_sm.v(48): truncated literal to match 11 bits File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 48
+Warning (10229): Verilog HDL Expression warning at keypad_check_sm.v(56): truncated literal to match 11 bits File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 56
+Warning (10229): Verilog HDL Expression warning at keypad_check_sm.v(64): truncated literal to match 11 bits File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 64
+Warning (10229): Verilog HDL Expression warning at keypad_check_sm.v(72): truncated literal to match 11 bits File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 72
+Info (12021): Found 1 design units, including 1 entities, in source file keypad_check_sm.v
+    Info (12023): Found entity 1: keypad_check_sm File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file toplevel.v
+    Info (12023): Found entity 1: TopLevel File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 1
+Info (12127): Elaborating entity "TopLevel" for the top level hierarchy
+Warning (10034): Output port "seven_segment" at TopLevel.v(7) has no driver File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+Info (12128): Elaborating entity "ClkDivider" for hierarchy "ClkDivider:u1" File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 18
+Warning (10230): Verilog HDL assignment warning at ClkDivider.v(44): truncated value with size 32 to match size of target (17) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/ClkDivider.v Line: 44
+Info (12128): Elaborating entity "ClkDivider" for hierarchy "ClkDivider:u2" File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 19
+Warning (10230): Verilog HDL assignment warning at ClkDivider.v(44): truncated value with size 32 to match size of target (25) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/ClkDivider.v Line: 44
+Info (12128): Elaborating entity "Counter" for hierarchy "Counter:c1" File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 21
+Info (12128): Elaborating entity "Counter" for hierarchy "Counter:c2" File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 22
+Info (12128): Elaborating entity "keypad_check_sm" for hierarchy "keypad_check_sm:sm1" File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 24
+Warning (10235): Verilog HDL Always Construct warning at keypad_check_sm.v(143): variable "row_check" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 143
+Warning (10235): Verilog HDL Always Construct warning at keypad_check_sm.v(146): variable "col_check" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 146
+Warning (10235): Verilog HDL Always Construct warning at keypad_check_sm.v(157): variable "row_check" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 157
+Warning (10235): Verilog HDL Always Construct warning at keypad_check_sm.v(160): variable "col_check" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 160
+Warning (10235): Verilog HDL Always Construct warning at keypad_check_sm.v(171): variable "row_check" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 171
+Warning (10235): Verilog HDL Always Construct warning at keypad_check_sm.v(174): variable "col_check" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 174
+Warning (10235): Verilog HDL Always Construct warning at keypad_check_sm.v(185): variable "row_check" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 185
+Warning (10235): Verilog HDL Always Construct warning at keypad_check_sm.v(188): variable "col_check" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 188
+Warning (10235): Verilog HDL Always Construct warning at keypad_check_sm.v(199): variable "row_check" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 199
+Warning (10235): Verilog HDL Always Construct warning at keypad_check_sm.v(201): variable "dout" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 201
+Warning (10235): Verilog HDL Always Construct warning at keypad_check_sm.v(202): variable "col_check" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 202
+Warning (10235): Verilog HDL Always Construct warning at keypad_check_sm.v(205): variable "counter" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 205
+Warning (10230): Verilog HDL assignment warning at keypad_check_sm.v(205): truncated value with size 32 to match size of target (3) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 205
+Warning (10235): Verilog HDL Always Construct warning at keypad_check_sm.v(211): variable "row_check" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 211
+Warning (10235): Verilog HDL Always Construct warning at keypad_check_sm.v(213): variable "dout" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 213
+Warning (10235): Verilog HDL Always Construct warning at keypad_check_sm.v(219): variable "row_check" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 219
+Warning (10240): Verilog HDL Always Construct warning at keypad_check_sm.v(106): inferring latch(es) for variable "row_check", which holds its previous value in one or more paths through the always construct File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 106
+Warning (10240): Verilog HDL Always Construct warning at keypad_check_sm.v(106): inferring latch(es) for variable "dout", which holds its previous value in one or more paths through the always construct File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 106
+Info (10041): Inferred latch for "dout[0]" at keypad_check_sm.v(106) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 106
+Info (10041): Inferred latch for "dout[1]" at keypad_check_sm.v(106) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 106
+Info (10041): Inferred latch for "dout[2]" at keypad_check_sm.v(106) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 106
+Info (10041): Inferred latch for "dout[3]" at keypad_check_sm.v(106) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 106
+Info (10041): Inferred latch for "row_check[0]" at keypad_check_sm.v(106) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 106
+Info (10041): Inferred latch for "row_check[1]" at keypad_check_sm.v(106) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 106
+Info (10041): Inferred latch for "row_check[2]" at keypad_check_sm.v(106) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 106
+Info (10041): Inferred latch for "row_check[3]" at keypad_check_sm.v(106) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 106
+Info (12128): Elaborating entity "shift_in_sm" for hierarchy "shift_in_sm:sm2" File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 25
+Warning (10235): Verilog HDL Always Construct warning at shift_in_sm.v(113): variable "dout" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 113
+Warning (10235): Verilog HDL Always Construct warning at shift_in_sm.v(113): variable "din" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 113
+Warning (10235): Verilog HDL Always Construct warning at shift_in_sm.v(119): variable "dout" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 119
+Warning (10235): Verilog HDL Always Construct warning at shift_in_sm.v(119): variable "din" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 119
+Warning (10235): Verilog HDL Always Construct warning at shift_in_sm.v(125): variable "dout" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 125
+Warning (10235): Verilog HDL Always Construct warning at shift_in_sm.v(125): variable "din" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 125
+Warning (10235): Verilog HDL Always Construct warning at shift_in_sm.v(131): variable "din" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 131
+Warning (10235): Verilog HDL Always Construct warning at shift_in_sm.v(131): variable "dout" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 131
+Warning (10235): Verilog HDL Always Construct warning at shift_in_sm.v(137): variable "dout" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 137
+Warning (10235): Verilog HDL Always Construct warning at shift_in_sm.v(143): variable "dout" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 143
+Warning (10240): Verilog HDL Always Construct warning at shift_in_sm.v(102): inferring latch(es) for variable "dout", which holds its previous value in one or more paths through the always construct File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 102
+Info (10041): Inferred latch for "dout[0]" at shift_in_sm.v(102) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 102
+Info (10041): Inferred latch for "dout[1]" at shift_in_sm.v(102) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 102
+Info (10041): Inferred latch for "dout[2]" at shift_in_sm.v(102) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 102
+Info (10041): Inferred latch for "dout[3]" at shift_in_sm.v(102) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 102
+Info (10041): Inferred latch for "dout[4]" at shift_in_sm.v(102) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 102
+Info (10041): Inferred latch for "dout[5]" at shift_in_sm.v(102) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 102
+Info (10041): Inferred latch for "dout[6]" at shift_in_sm.v(102) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 102
+Info (10041): Inferred latch for "dout[7]" at shift_in_sm.v(102) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 102
+Info (10041): Inferred latch for "dout[8]" at shift_in_sm.v(102) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 102
+Info (10041): Inferred latch for "dout[9]" at shift_in_sm.v(102) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 102
+Info (10041): Inferred latch for "dout[10]" at shift_in_sm.v(102) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 102
+Info (10041): Inferred latch for "dout[11]" at shift_in_sm.v(102) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 102
+Info (10041): Inferred latch for "dout[12]" at shift_in_sm.v(102) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 102
+Info (10041): Inferred latch for "dout[13]" at shift_in_sm.v(102) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 102
+Info (10041): Inferred latch for "dout[14]" at shift_in_sm.v(102) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 102
+Info (10041): Inferred latch for "dout[15]" at shift_in_sm.v(102) File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/shift_in_sm.v Line: 102
+Info (12128): Elaborating entity "valid_code_check_sm" for hierarchy "valid_code_check_sm:sm3" File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 26
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch keypad_check_sm:sm1|row_check[0] has unsafe behavior File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 106
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal keypad_check_sm:sm1|state.00000000010 File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 17
+Warning (13012): Latch keypad_check_sm:sm1|row_check[1] has unsafe behavior File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 106
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal keypad_check_sm:sm1|state.00000000010 File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 17
+Warning (13012): Latch keypad_check_sm:sm1|row_check[2] has unsafe behavior File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 106
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal keypad_check_sm:sm1|state.00000000100 File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 17
+Warning (13012): Latch keypad_check_sm:sm1|row_check[3] has unsafe behavior File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 106
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal keypad_check_sm:sm1|state.00000001000 File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/keypad_check_sm.v Line: 17
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "seven_segment[0]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[1]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[2]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[3]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[4]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[5]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[6]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[7]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[8]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[9]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[10]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[11]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[12]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[13]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[14]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[15]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[16]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[17]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[18]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[19]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[20]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[21]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[22]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[23]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[24]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[25]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[26]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "seven_segment[27]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 7
+    Warning (13410): Pin "led_out[1]" is stuck at GND File: C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/TopLevel.v Line: 9
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/output_files/Lab4.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 134 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 7 input pins
+    Info (21059): Implemented 34 output pins
+    Info (21061): Implemented 93 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 76 warnings
+    Info: Peak virtual memory: 4870 megabytes
+    Info: Processing ended: Mon Feb 12 20:55:55 2024
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/Users/drago/OneDrive/Desktop/CST231 HW/Lab4/output_files/Lab4.map.smsg.
+
+
